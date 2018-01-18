@@ -1,13 +1,18 @@
-# Docker ELK stack
+# Docker ELK Stack for Network Devices
 
-[![Join the chat at https://gitter.im/deviantony/docker-elk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/deviantony/docker-elk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Elastic Stack version](https://img.shields.io/badge/ELK-6.1.0-blue.svg?style=flat)](https://github.com/deviantony/docker-elk/issues/212)
-[![Build Status](https://api.travis-ci.org/deviantony/docker-elk.svg?branch=master)](https://travis-ci.org/deviantony/docker-elk)
 
-Run the latest version of the ELK (Elasticsearch, Logstash, Kibana) stack with Docker and Docker Compose.
+Send your syslogs to the latest version of the ELK (Elasticsearch, Logstash, Kibana) stack with Docker and Docker Compose.
 
-It will give you the ability to analyze any data set by using the searching/aggregation capabilities of Elasticsearch
-and the visualization power of Kibana.
+It will give you the ability to analyze syslogs from IOS-XR, IOS-XE, and NX-OS devices. data set by using the searching/aggregation capabilities of Elasticsearch and the visualization power of Kibana.
+
+
+## Acknowledgements
+
+* This project was originally forked from [deviantony/docker-elk](https://github.com/deviantony/docker-elk)
+* This [blog post](https://www.linkedin.com/pulse/cisco-syslog-logstash-daniel-gilbertson-5994871489260695552/?articleId=5994871489260695552) by Daniel Gilbertson was very helpful in getting started with the required groks and facility mappings
+* Additional modifications from the previous were made by @justinjahn [here](https://gist.github.com/justinjahn/85305bc7b7df9a6412baedce5f1a0ece) 
+* If you do any work at all with tweaking the groks provided here, I hightly suggest you take a look at [Grok Constructor](http://grokconstructor.appspot.com/do/match)
+
 
 Based on the official Docker images:
 
@@ -15,7 +20,7 @@ Based on the official Docker images:
 * [logstash](https://github.com/elastic/logstash-docker)
 * [kibana](https://github.com/elastic/kibana-docker)
 
-**Note**: Other branches in this project are available:
+
 
 * ELK 6 with X-Pack support: https://github.com/deviantony/docker-elk/tree/x-pack
 * ELK 6 in Vagrant: https://github.com/deviantony/docker-elk/tree/vagrant
