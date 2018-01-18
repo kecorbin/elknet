@@ -22,11 +22,14 @@ services:
   logstash:
     build:
       context: logstash/
+      args:
+        - HTTPS_PROXY=http://proxy-wsa.esl.cisco.com:80/
+        - https_proxy=http://proxy-wsa.esl.cisco.com:80/
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
       - ./logstash/patterns:/opt/logstash/patterns
-      - ./network.log:/var/log/network.log
+  
     ports:
       - "5000:5000"
       - "514:5140"
