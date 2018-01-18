@@ -1,4 +1,0 @@
-service timestamps debug datetime msec
-service timestamps log datetime msec
-logging host 10.94.241.177 vrf Mgmt-intf transport udp port 5140
-ntp server vrf Mgmt-intf 10.94.140.70
