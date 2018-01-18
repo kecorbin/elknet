@@ -1,0 +1,3 @@
+logging server 10.94.241.177 5 port 5140 use-vrf management
+logging source-interface mgmt0
+logging timestamp milliseconds
