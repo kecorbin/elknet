@@ -31,7 +31,7 @@ services:
       - ./logstash/patterns:/opt/logstash/patterns
 
     ports:
-      - "5514:5140/udp"
+      - "5140:5140/udp"
 
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
