@@ -2,6 +2,10 @@ version: '2'
 
 services:
 
+# not sure if we will need this
+# syslog:
+# sudo docker run -it -p 5514:514 -v $(pwd)/syslog-ng/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf -v $(pwd)/network.log:/var/log/network.log balabit/syslog-ng:latest -edv
+
   elasticsearch:
     build:
       context: elasticsearch/
@@ -21,8 +25,13 @@ services:
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+      - ./logstash/patterns:/opt/logstash/patterns
+      - ./network.log:/var/log/network.log
     ports:
       - "5000:5000"
+      - "514:5140"
+      - "514:5140/udp"
+
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
