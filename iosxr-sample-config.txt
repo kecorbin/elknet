@@ -1,0 +1,2 @@
+service timestamps log datetime show-timezone
+logging 10.94.241.177 vrf Mgmt-intf port 5140
